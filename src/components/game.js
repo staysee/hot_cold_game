@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from './header';
+import Feedback from './feedback';
 
 export default class Game extends React.Component {
 	constructor(props){
@@ -17,7 +18,7 @@ export default class Game extends React.Component {
 			<div>
 				<Header />
 				<main>
-					<section>Feedback</section>
+					<Feedback />
 					<section>Guess Section</section>
 					<section>Wrong Numbers</section>
 				</main>
