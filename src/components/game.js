@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './header';
 import Feedback from './feedback';
+import Guess from './guess';
 
 export default class Game extends React.Component {
 	constructor(props){
@@ -14,12 +15,14 @@ export default class Game extends React.Component {
 	}
 
 	render () {
+		const {feedback} = this.state
+
 		return (
 			<div>
 				<Header />
 				<main>
-					<Feedback />
-					<section>Guess Section</section>
+					<Feedback feedback={feedback} />
+					<Guess />
 					<section>Wrong Numbers</section>
 				</main>
 			</div>
