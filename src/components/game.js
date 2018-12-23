@@ -3,12 +3,13 @@ import React from 'react';
 import Header from './header';
 import Feedback from './feedback';
 import Guess from './guess';
+import GuessWrongNumbers from './guess-wrongnumbers';
 
 export default class Game extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			guesses: [],
+			guesses: [1, 2],
 			feedback: 'Make your guess!',
 			secretNumber: Math.floor(Math.random() * 100) + 1
 		}
@@ -23,7 +24,7 @@ export default class Game extends React.Component {
 				<main>
 					<Feedback feedback={feedback} />
 					<Guess />
-					<section>Wrong Numbers</section>
+					<GuessWrongNumbers guesses={this.state.guesses}/>
 				</main>
 			</div>
 		)

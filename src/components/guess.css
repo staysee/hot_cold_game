@@ -1,0 +1,36 @@
+#guess-form {
+    width: 380px;
+    margin: 0 auto;
+    background: #394264;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    background: #50597b;
+    color: #fff;
+    border: solid 1px #1f253d;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+}
+
+button {
+    background: #1F253D;
+    color: #95a5a6;
+    width: 300px;
+    height: 50px;
+    border-radius: 4px;
+    margin: 0.8em auto 0;
+    display: block;
+    font-size: 2em;
+    border: solid 1px #1f253d;
+}
+
+button:hover{
+    color: white;
+}
