@@ -11,7 +11,7 @@ export default function Header(props){
 					<li>+NEW GAME</li>
 				</ul>
 			</nav>
-			<h1> HOT or COLD </h1>
+			<h1>HOT or COLD</h1>
 		</header>
 	)
 }

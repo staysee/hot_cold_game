@@ -7,7 +7,7 @@ export default function GuessWrongNumbers(props){
         <li key={index}>{guess}</li>
     ))
     return(
-        <section>
+        <section id="wrong-numbers">
             <ul>{guesses}</ul>
         </section>
     )

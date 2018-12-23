@@ -17,13 +17,14 @@ export default class Game extends React.Component {
 
 	render () {
 		const {feedback} = this.state
+		const {guessCount} = this.state.guesses.length;
 
 		return (
 			<div>
 				<Header />
 				<main>
 					<Feedback feedback={feedback} />
-					<Guess />
+					<Guess guessCount={guessCount}/>
 					<GuessWrongNumbers guesses={this.state.guesses}/>
 				</main>
 			</div>

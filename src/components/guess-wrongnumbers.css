@@ -1,4 +1,4 @@
-section {
+#wrong-numbers {
     width: 380px;
     margin: 0 auto;
     border-bottom-right-radius: 5px;
@@ -7,6 +7,10 @@ section {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+ul{
+    padding: 0;
 }
 
 li{
