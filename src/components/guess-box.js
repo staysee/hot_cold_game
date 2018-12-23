@@ -5,9 +5,14 @@ import GuessForm from './guess-form';
 import GuessWrongNumbers from './guess-wrongnumbers';
 
 export default function GuessBox(props){
+    const {feedback} = props;
+    const {guessCount} = props;
     return (
-        <Feedback feedback={feedback} />
-        <GuessForm guessCount={guessCount} />
-        <GuessWrongNumbers guesses={this.state.guesses} />
+        <section>
+            <Feedback feedback={feedback} />
+            <GuessForm onMakeGuess={guess =>props.onMakeGuess(guess)} />
+            {/* <GuessWrongNumbers guesses={props.guesses} /> */}
+            {/* <GuessCount guessCount={props.guessCount}/> */}
+        </section>
     );
 }

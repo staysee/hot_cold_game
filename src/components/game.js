@@ -39,14 +39,14 @@ export default class Game extends React.Component {
 
 
 	render () {
-		const {feedback} = this.state;
-		const {guessCount} = this.state;
+		const {feedback, guesses} = this.state;
+		const {guessCount} = guesses.length;
 
 		return (
 			<div>
 				<Header onRestartGame={() => this.restartGame()} />
 				<main>
-					<GuessBox />
+					<GuessBox onMakeGuess={guess => this.makeGuess(guess)}/>
 				</main>
 			</div>
 		)

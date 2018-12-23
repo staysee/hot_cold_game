@@ -3,11 +3,14 @@ import './guess-form.css';
 
 import GuessCount from './guess-count';
 
-export default class Guess extends React.Component {
+export default class GuessForm extends React.Component {
 
 	onSubmit(event){
 		event.preventDefault();
-		console.log(this.props);
+		console.log(this.props.onMakeGuess);
+		const userInput = this.input.value;
+		this.props.onMakeGuess(userInput);
+		console.log(this.input.value);
 	}
 
 
@@ -25,7 +28,6 @@ export default class Guess extends React.Component {
 					</input>
 					<button type="submit">Guess</button>
 				</form>
-				{/* <GuessCount guessCount={props.guessCount}/> */}
 			</section>
 		)
 	}
