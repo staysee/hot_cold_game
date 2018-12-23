@@ -1,31 +1,52 @@
 import React from 'react';
 
 import Header from './header';
-import Feedback from './feedback';
-import Guess from './guess';
-import GuessWrongNumbers from './guess-wrongnumbers';
+import GuessBox from './guess-box';
 
 export default class Game extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			guesses: [1, 2],
+			guesses: [],
 			feedback: 'Make your guess!',
 			secretNumber: Math.floor(Math.random() * 100) + 1
 		}
 	}
 
+	restartGame(){
+		this.setState({
+			guesses: [],
+			feedback: 'Make your guess!',
+			secretNumber: Math.floor(Math.random() * 100) + 1
+		});
+	}
+
+	makeGuess(userGuess){
+		let feedback;
+		if (userGuess === this.state.secretNumber){
+			feedback = "You guessed the right number!"
+		} else if (userGuess < this.state.secretNumber){
+			feedback = "Number is less than the secret number"
+		} else if (userGuess > this.state.secretNumber){
+			feedback = "Number is more than the secret number"
+		}
+
+		this.setState({
+			feedback,
+			guesses: [...this.state.guesses, userGuess]
+		})
+	}
+
+
 	render () {
-		const {feedback} = this.state
-		const {guessCount} = this.state.guesses.length;
+		const {feedback} = this.state;
+		const {guessCount} = this.state;
 
 		return (
 			<div>
-				<Header />
+				<Header onRestartGame={() => this.restartGame()} />
 				<main>
-					<Feedback feedback={feedback} />
-					<Guess guessCount={guessCount}/>
-					<GuessWrongNumbers guesses={this.state.guesses}/>
+					<GuessBox />
 				</main>
 			</div>
 		)
