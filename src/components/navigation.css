@@ -1,0 +1,21 @@
+nav ul li{
+	list-style: none;
+	font-size: 18px;
+    font-weight: bold;
+    background-color: #1f243d;
+}
+
+nav ul li:first-child{
+	float: left;
+}
+
+nav ul li {
+	float: right;
+}
+
+nav a {
+    text-decoration: none;
+}
+nav a:visited{
+	color: white;
+}

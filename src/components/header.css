@@ -1,17 +1,3 @@
-nav ul li{
-	list-style: none;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-nav ul li:first-child{
-	float: left;
-}
-
-nav ul li {
-	float: right;
-}
-
 h1 {
 	text-align: center;
 	clear: both;

@@ -36,12 +36,19 @@ export default class Game extends React.Component {
 				feedback
 			})
 		} else {
-			if (userGuess === this.state.secretNumber){
-				feedback = "You guessed the right number!"
-			} else if (userGuess < this.state.secretNumber){
-				feedback = "Number is less than the secret number"
-			} else if (userGuess > this.state.secretNumber){
-				feedback = "Number is more than the secret number"
+			const answer = this.state.secretNumber;
+			const difference = Math.abs(userGuess-answer);
+
+			if (difference >= 30){
+				feedback = "Cold"
+			} else if (difference >= 15){
+				feedback = "Warm"
+			} else if (difference >= 5){
+				feedback = "Hot"
+			} else if (difference >= 1){
+				feedback = "Very Hot"
+			} else {
+				feedback = "Correct!"
 			}
 		}
 
