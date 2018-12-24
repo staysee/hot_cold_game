@@ -23,12 +23,26 @@ export default class Game extends React.Component {
 
 	makeGuess(userGuess){
 		let feedback;
-		if (userGuess === this.state.secretNumber){
-			feedback = "You guessed the right number!"
-		} else if (userGuess < this.state.secretNumber){
-			feedback = "Number is less than the secret number"
-		} else if (userGuess > this.state.secretNumber){
-			feedback = "Number is more than the secret number"
+		if (isNaN(userGuess)){
+			feedback = "Guess a number"
+			this.setState({
+				feedback
+			})
+			return;
+		}
+		if (userGuess < 1 || userGuess > 100){
+			feedback = "Guess a number between 1-100"
+			this.setState({
+				feedback
+			})
+		} else {
+			if (userGuess === this.state.secretNumber){
+				feedback = "You guessed the right number!"
+			} else if (userGuess < this.state.secretNumber){
+				feedback = "Number is less than the secret number"
+			} else if (userGuess > this.state.secretNumber){
+				feedback = "Number is more than the secret number"
+			}
 		}
 
 		this.setState({
@@ -46,7 +60,7 @@ export default class Game extends React.Component {
 			<div>
 				<Header onRestartGame={() => this.restartGame()} />
 				<main>
-					<GuessBox onMakeGuess={guess => this.makeGuess(guess)}/>
+					<GuessBox feedback={feedback} onMakeGuess={guess => this.makeGuess(guess)}/>
 				</main>
 			</div>
 		)

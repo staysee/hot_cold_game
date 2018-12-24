@@ -20,6 +20,8 @@ export default class GuessForm extends React.Component {
 				<form onSubmit={e=>this.onSubmit(e)}>
 					<input
 						type="text" 
+						min="1"
+						max="100"
 						maxLength="3"
 						autoComplete="off"
 						placeholder="Enter your Guess"
