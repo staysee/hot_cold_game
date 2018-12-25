@@ -15,7 +15,6 @@ export default class GuessForm extends React.Component {
 		this.input.value = '';
 	}
 
-
 	render (){
 		return(
 			<section id="guess-form">
