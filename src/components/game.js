@@ -56,12 +56,14 @@ export default class Game extends React.Component {
 			} else {
 				feedback = "Correct!"
 			}
+			
+			this.setState({
+				feedback,
+				guesses: [...this.state.guesses, userGuess]
+			})
 		}
 
-		this.setState({
-			feedback,
-			guesses: [...this.state.guesses, userGuess]
-		})
+		
 	}
 
 
