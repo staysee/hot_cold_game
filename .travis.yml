@@ -2,6 +2,13 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
-  - CI=true
+- CI=true
+deploy:
+  provider: heroku
+  api_key:
+    secure: QayR6AmhIkPgwJ4WboMSFNrgu9yiwyI0G//0yrRdozrGzWp9tjw/Cv/PPNuAD53H1rZ+gtoLnkAwFnHT7jYLOYoGJva8WPDyORuKKFieYrq/V+znfdPZw9PG4MwWwQl4hsJWQMKhvArWWuQkgstkx9G615FspocffM4MfIqzmNiHl4Y9Mn3Deg4s78/UOhgz4GwuHPk/ZJ8SpOd/r4qbqbzpwbRpMk/n9RVxwQ20AV/OECTTTBPSrU1Y5HF0cw/8hXPCJ1Fq81aEfViyaoCE3GAiBpSK2eu2NHL+GZvpNqzB8v3UgJAmswoYNgDul7O4Jxzfd+yjYfUc7Rv+BjZVl7GROufFePVyux5wLMMKx4rcVJkmvymyZwyd7JclD6mt9MLxhVuJAr3M153no4IyE83vFDS/yFiYeHA5V50xVy5NsEkLsea4SLrh6UczZMXtcVEf9zA8+MnigqyXr578YK7whNLyfORYDJSfzjh0/5SpwrPVdnfWKNdWSYBJqXm9AiBIFSNQ7F8CocevX3eGLltBOELnER3Wm6XOfUQfRnPCDliEhTE8ijmwdyHy1d5WEZMPnJLNOzmYD30UZPcrIx2hhVxERS6HHGngqDvYNTBUoalilpL5xZw4lR7F5cRycrSSALKySF/yZKlNzEV/ebz3A4zyyki4KzDGNyeuoDk=
+  app: warm-eyrie-57533
+  on:
+    repo: staysee/hot_cold_game
